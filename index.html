@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content" />
+    <meta name="theme-color" content="#111827" />
+    
+    <!-- iOS Web App Config -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Костя" />
+    
+    <!-- Android Web App Config -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Icons -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍺</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22 style=%22background-color: %23111827;%22><rect width=%22100%22 height=%22100%22 fill=%22%23111827%22/><text x=%2250%25%22 y=%2255%25%22 font-size=%2280%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>🍺</text></svg>">
+    
+    <title>Помоги Косте выйти на улицу</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            spacing: {
+              'safe-b': 'env(safe-area-inset-bottom)',
+              'safe-t': 'env(safe-area-inset-top)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap');
+      html, body {
+        height: 100%;
+        overflow: hidden; /* Prevent bounce on body */
+        background-color: #111827;
+      }
+      body {
+        font-family: 'Roboto', sans-serif;
+        color: #e0e0e0;
+        overscroll-behavior: none;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+      }
+      .pixel-font {
+        font-family: 'Press Start 2P', cursive;
+      }
+      /* Custom scrollbar for game text */
+      .game-scroll::-webkit-scrollbar {
+        width: 4px;
+      }
+      .game-scroll::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.1);
+      }
+      .game-scroll::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,0.2);
+        border-radius: 4px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
